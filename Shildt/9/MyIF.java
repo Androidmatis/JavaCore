@@ -7,4 +7,8 @@ public interface MyIF {
     default String getString() {
         return "Стандартная строка";
     }
+    // Это статический метод интерфейса.
+    static int getDefaultNumber() {
+        return 0;
+    }
 }
