@@ -18,11 +18,15 @@ class NewThread implements Runnable {
         }
         System.out.println("Завершение дочернего потока.");
     }
+    public static NewThread createAndStart() {
+        NewThread myThrd = new NewThread(); // Создать новый поток
+        myThrd.t.start();   // Запустить поток
+        return myThrd;
+    }
 }
 class ThreadDemo {
     public static void main(String[] args) {
-        NewThread nt = new NewThread(); // создать новый поток
-        nt.t.start();                   // запустить поток
+        NewThread nt = NewThread.createAndStart();
         try {
             for (int i = 5; i > 0; i--) {
                 System.out.println("Главный поток: " + i);
